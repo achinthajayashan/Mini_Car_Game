@@ -1,0 +1,43 @@
+#main{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow-y: hidden;
+}
+#road{
+    background-image: url("road2.png");
+    background-size: cover;
+    background-position: center;
+    height: 300%;
+    width: 20vw;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+    animation: road-anim 1s infinite linear reverse;
+}
+
+@keyframes road-anim {
+   0%{
+       bottom: 0%;
+   }
+
+    100%{
+       bottom: 100%;
+    }
+}
+
+#car{
+    background-image: url("pngwing.com (51).png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 10%;
+    right: 8.5%;
+    left: 0;
+    margin: auto;
+    rotate: 270deg;
+    height: 160px;
+    width: 320px;
+}
+
