@@ -83,7 +83,10 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+score=0;
 checkGameOver = setInterval(function () {
+    score++;
+    $('#scoreTxt').text(score);
     carOnePos=$('#car').offset().left
     carTwoPos=$('#car2').offset().left
     // console.log(carOnePos);
@@ -103,6 +106,7 @@ checkGameOver = setInterval(function () {
 
             $("#road").css('animation','none');
             $("#car2").css('animation','none');
+            clearInterval(checkGameOver);
 
             Swal.fire({
                 icon: 'error',
@@ -110,6 +114,7 @@ checkGameOver = setInterval(function () {
                 text: 'Try Again .....',
                 // footer: '<a href="">Why do I have this issue?</a>'
             })
+
         }
 
         if (carOnePosTop == 39.90625 && carTwoPosTop > -100 && carTwoPosTop < 0){
@@ -119,7 +124,7 @@ checkGameOver = setInterval(function () {
 
             $("#road").css('animation','none');
             $("#car2").css('animation','none');
-
+            clearInterval(checkGameOver);
             Swal.fire({
                 icon: 'error',
                 title: 'Game Over !',
@@ -140,6 +145,8 @@ checkGameOver = setInterval(function () {
             $("#road").css('animation','none');
             $("#car2").css('animation','none');
 
+            clearInterval(checkGameOver);
+
             Swal.fire({
                 icon: 'error',
                 title: 'Game Over !',
@@ -155,6 +162,8 @@ checkGameOver = setInterval(function () {
 
             $("#road").css('animation','none');
             $("#car2").css('animation','none');
+
+            clearInterval(checkGameOver);
 
             Swal.fire({
                 icon: 'error',

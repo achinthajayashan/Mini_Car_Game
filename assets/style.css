@@ -57,6 +57,15 @@
     animation: car2Anim 5s linear infinite;
 }
 
+#scoreTxt{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: auto;
+    color: purple;
+
+}
+
 @keyframes car2Anim {
     0%{
         top: -300px;
