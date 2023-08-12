@@ -87,18 +87,22 @@ score=0;
 checkGameOver = setInterval(function () {
     score++;
     $('#scoreTxt').text(score);
-    carOnePos=$('#car').offset().left
-    carTwoPos=$('#car2').offset().left
+
+    console.log($('#car').position().top);
+
+    carOnePos=$('#car').position().left
+    carTwoPos=$('#car2').position().left
     // console.log(carOnePos);
     // console.log(carTwoPos);
 
     carOnePosTop=$('#car').offset().top
     carTwoPosTop=$('#car2').offset().top
-    console.log(carOnePosTop);
-    console.log(carTwoPosTop);
+    // console.log(carOnePosTop);
+    // console.log(carTwoPosTop);
 
-    if (carOnePos == 685 && carTwoPos==708){
+    if (carOnePos == -70 && carTwoPos==-150){
         console.log("both cars in right path");
+
         if (carOnePosTop == 599.703125 && carTwoPosTop > 400.078125){
             crashSound.play();
             //alert("crashed");
@@ -135,7 +139,7 @@ checkGameOver = setInterval(function () {
 
     }
 
-    if (carOnePos == 835 && carTwoPos==858){
+    if (carOnePos == 230 && carTwoPos==150){
         console.log("both cars in left path");
         if (carOnePosTop == 599.703125 && carTwoPosTop > 400.078125){
             crashSound.play();
@@ -169,6 +173,20 @@ checkGameOver = setInterval(function () {
                 icon: 'error',
                 title: 'Game Over !',
                 text: 'Try Again .....',
+                // footer: '<a href="">Why do I have this issue?</a>'
+            })
+        }
+
+        if (score==1500){
+            clearInterval(checkGameOver);
+
+            $("#road").css('animation','none');
+            $("#car2").css('animation','none');
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Level Completed',
+                text: 'Go To Next Level',
                 // footer: '<a href="">Why do I have this issue?</a>'
             })
         }

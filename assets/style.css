@@ -4,6 +4,7 @@
     position: relative;
     overflow-y: hidden;
     margin: auto;
+    background-color: dimgrey;
 }
 #road{
     background-image: url("road2.png");
@@ -62,8 +63,8 @@
     top: 10px;
     left: 10px;
     margin: auto;
-    color: purple;
-
+    color: white;
+    font-size: 35px;
 }
 
 @keyframes car2Anim {
